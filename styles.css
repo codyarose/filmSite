@@ -1,0 +1,111 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	background: url(lady-bird.jpg) no-repeat 50% 0 fixed;
+	background-size: cover;
+}
+
+@media only screen 
+	and (min-device-width: 320px)
+	and (max-device-width: 800px) {
+	body {
+		background: url(lady-bird.jpg) no-repeat 20% 0 fixed;
+  	background-size: cover;
+	};
+}
+
+.container {
+	/*Makes the container actual full width*/
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+
+	/*Grid layout for the whole page*/
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 50px repeat(3, 1fr);
+	grid-template-areas: 
+		"n n n n n n n n n n n n"
+		". . . . . . . . . . . ."
+		". . . . . . . . . . . ."
+		"t t t t t t t t t t t t";
+	top: 0;
+}
+
+/*#################### NAV ####################*/
+	nav {
+		grid-area: n;
+		color: #fff;
+		list-style: none;
+
+		/*Navbar grid layout*/
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-auto-rows: auto;
+		align-items: center;
+		text-align: center;
+		grid-template-areas: 
+			"lgo . mov . . shw . . abt . . soc"
+	}
+
+	nav li a {
+		color: rgba(250, 250, 250, 0.5);
+		text-decoration: none;
+		transition: 0.3s ease;
+	}
+
+	nav li a:hover {
+		color: #fff;
+	}
+
+	.logo {
+		grid-area: lgo;
+		/*color: #fff;*/
+		fill: currentColor;
+	}
+
+	.logo img {
+		width: 70%;
+		opacity: 0.3;
+		transition: 0.1s ease;
+		backface-visibility: hidden !important;
+		transform: translateZ(0) scale(1,1) !important;
+	}
+
+	.logo img:hover {
+		opacity: 0.8;
+		transition: 0.3s ease;
+		backface-visibility: hidden !important;
+		transform: translateZ(0) scale(1,1) !important;
+	}
+
+	.movies {
+		grid-area: mov;
+	}
+
+	.shows {
+		grid-area: shw;
+	}
+
+	.about {
+		grid-area: abt;
+	}
+
+	.social {
+		grid-area: soc;
+	}
+
+/*#################### /NAV ####################*/
+
+.title {
+	grid-area: t;
+	font-size: 7rem;
+	font-weight: 300;
+	color: #fff;
+	opacity: 1;
+	padding-right: 2rem;
+	padding-bottom: 0.5rem;
+	align-self: end;
+	text-align: right;
+}
+
